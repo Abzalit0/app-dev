@@ -1,0 +1,29 @@
+header {
+    color: $main-color;
+ }
+
+ .new {
+    display: flex;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    border-width: 1px;
+ }
+
+ .hello {
+    color: red;
+    font-size: 100px;
+
+    @media (max-width: 768px) {
+        color: blue;
+        width: 70px;
+     }
+ }
+
+ .class {
+
+    display: flex;
+     @media (max-width: 768px) {
+        display: block;
+     }
+
+ }

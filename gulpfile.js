@@ -29,7 +29,7 @@ task("copy:html", () => {
     .pipe(reload({ stream: true }));
 });
 task("copy:img", () => {
-  return src("src/images/**/*.jpg")
+  return src("src/images/**/*")
     .pipe(dest("dist/images"))
     .pipe(reload({ stream: true }));
 });
@@ -58,23 +58,28 @@ task("styles", () => {
     .pipe(gulpif(env === "prod", gcmq()))
     .pipe(gulpif(env === "prod", cleanCSS()))
     .pipe(gulpif(env === "dev", sourcemaps.write()))
-    .pipe(dest('dist'))
+    .pipe(dest("dist"))
     .pipe(reload({ stream: true }));
 });
 
-const libs = ["node_modules/jquery/dist/jquery.js", "src/script/*.js"];
+const libs = ["node_modules/jquery/dist/jquery.js", "src/scripts/*.js"];
 
 task("scripts", () => {
   return src(libs)
-  .pipe(gulpif(env === 'dev', sourcemaps.init()))
-  .pipe(concat('main.min.js', {newLine: ';'}))
-  .pipe(gulpif(env === 'prod', babel({
-      presets: ['@babel/env']
-    })))
-  .pipe(gulpif(env === 'prod', uglify()))
-  .pipe(gulpif(env === 'dev', sourcemaps.write()))
-  .pipe(dest('dist'))
-  .pipe(reload({ stream: true }));
+    .pipe(gulpif(env === "dev", sourcemaps.init()))
+    .pipe(concat("main.min.js", { newLine: ";" }))
+    .pipe(
+      gulpif(
+        env === "prod",
+        babel({
+          presets: ["@babel/env"],
+        })
+      )
+    )
+    .pipe(gulpif(env === "prod", uglify()))
+    .pipe(gulpif(env === "dev", sourcemaps.write()))
+    .pipe(dest("dist"))
+    .pipe(reload({ stream: true }));
 });
 
 task("icons", () => {
@@ -111,23 +116,26 @@ task("server", () => {
   });
 });
 
-task('watch', () => {
-  watch('./src/styles/**/*.scss', series('styles'));
-  watch('./src/*.html', series('copy:html'));
-  watch('./src/scripts/*.js', series('scripts'));
-  watch('./src/images/icons/*.svg', series('icons'));
- });
+task("watch", () => {
+  watch("./src/styles/**/*.scss", series("styles"));
+  watch("./src/*.html", series("copy:html"));
+  watch("./src/scripts/*.js", series("scripts"));
+  watch("./src/images/icons/*.svg", series("icons"));
+});
 
- task('default',
- series(
-   'clean',
-   parallel('copy:html', "copy:img", 'styles', 'scripts', 'icons'),
-   parallel('watch', 'server')
- )
+task(
+  "default",
+  series(
+    "clean",
+    parallel("copy:html", "copy:img", "styles", "scripts", "icons"),
+    parallel("watch", "server")
+  )
 );
 
-task('build',
- series(
-   'clean',
-   parallel('copy:html', "copy:img", 'styles', 'scripts', 'icons'))
+task(
+  "build",
+  series(
+    "clean",
+    parallel("copy:html", "copy:img", "styles", "scripts", "icons")
+  )
 );

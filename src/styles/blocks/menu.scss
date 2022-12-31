@@ -1,12 +1,32 @@
 .menu {
-    margin: 5px;
-    &:hover {
-        opacity: .5;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 35px;
+    z-index: 10;
+    position: relative;
+}
+.header__menu {
+    top: -100%;
+}
+.nav-menu__list {
+    display: flex;
+
+    .nav-menu__item {
+        font-size: 18px;
+        margin-right: 40px;
+        text-transform: uppercase;
+
+        
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-menu-item__link {
+            &:hover {
+                color: $yellow;
+            }
+            
+        }
     }
- }
-
- .menu--color{
-    color: red;
- }
-
- 
+}

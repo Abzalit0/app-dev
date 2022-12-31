@@ -1,0 +1,52 @@
+.location {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.location__map {
+    margin-right: 40px;
+}
+
+.info__title {
+    font-size: 30px;
+    line-height: 30px;
+    color: $yellow;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.info__position-list {
+    margin-bottom: 30px;
+}
+
+.info__position-item {
+    font-size: 19px;
+    line-height: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 2px;
+        border-radius: 30%;
+        background: currentColor;
+        color: $yellow;
+        margin-right: 4px;
+    }
+}
+
+.info__dop {
+    margin-bottom: 30px;
+
+}
+
+.phone-number {
+    &:hover {
+        color: $yellow;
+    }
+}

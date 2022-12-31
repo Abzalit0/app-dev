@@ -1,0 +1,32 @@
+.footer {
+    background-color: #0e1215;
+    color: #fff;
+}
+
+.footer__menu {
+    flex-direction: column;
+    margin-bottom: 75-35px;
+}
+
+.footer-nav-menu__item {
+    display: flex;
+    align-items: center;
+    &::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 2px;
+        border-radius: 30%;
+        margin-right: 40px;
+        background: currentColor;
+    }
+    &:first-child {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.footer__nav-menu__logo {
+    margin-bottom: 45-16px;
+}

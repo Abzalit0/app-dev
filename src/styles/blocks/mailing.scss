@@ -1,0 +1,24 @@
+.mailing__row {
+    margin-bottom: 27px;
+    display: flex;
+}
+
+.mailing__block {
+    flex: 1;
+    margin-right: 20px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.mailing__title {
+    margin-bottom: 10px;
+}
+
+.mailing__input {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background-color: #e8eaec;
+}

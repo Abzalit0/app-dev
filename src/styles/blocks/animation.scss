@@ -1,0 +1,55 @@
+.svg {
+    fill: $yellow;
+    width: 100px;
+    height: 100px;
+}
+
+.animation__svg {
+    position: fixed;
+}
+.animation__ballon {
+    top: 12%;
+    left: 28%;
+}
+.animation__koleso {
+    top: 40%;
+    left: 7%;
+}
+.animation__mouse {
+    top: 75%;
+    left: 25%;
+}
+.animation__monitor {
+    top: 12%;
+    right: 28%;
+}
+.animation__paint {
+    top: 40%;
+    right: 7%;
+}
+.animation__book {
+    top: 75%;
+    right: 25%;
+}
+.active {
+    .animation__svg-right {
+        animation: right 2s linear;
+    }
+    
+    .animation__svg-left {
+        animation: left 2s linear;
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: translate(-400%, -80%);
+        opacity: 0;
+    }
+}
+@keyframes left {
+    0% {
+        transform: translate(400%, -80%);
+        opacity: 0;
+    }
+}

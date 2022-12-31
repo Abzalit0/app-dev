@@ -1,0 +1,28 @@
+.midle-content {
+    height: 720px;
+    background: url(images/bg/jalome-chirwa-7kVX9VW1S8k-unsplash.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.midle-content__title {
+    width: 345px;
+    margin-right: 133px;
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 400;
+    filter: drop-shadow(0px 3px 3.5px #738397);
+    text-transform: uppercase;
+}
+
+.midle-content__text {
+    width: 388px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 300;
+}
